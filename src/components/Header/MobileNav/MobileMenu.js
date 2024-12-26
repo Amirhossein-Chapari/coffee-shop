@@ -20,10 +20,13 @@ export default function MobileHeader() {
     // Toggle Sidebar
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+    const closeSidebar = () => {
+        setIsSidebarOpen(false); // بستن منو
+    };
+    
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
-
 
     // Toggle Submenu
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
@@ -131,14 +134,15 @@ export default function MobileHeader() {
             <img src={process.env.PUBLIC_URL + '/images/Header/app-logo-type.svg'} alt="" className='w-[100px] h-10' />
 
             {/* Cart Icon */}
-            <button onClick={toggleCart} className='text-zinc-700 dark:text-white'><ShoppingCartIcon /></button>
+            <button onClick={toggleCart} className='text-zinc-700 dark:text-white w-6'><ShoppingCartIcon /></button>
 
             {/* Mobile Cart */}
             
-            <div className={`fixed top-0 bottom-0 left-0 ${isToggleCartOpen ? 'left-0' : '-left-64'} flex flex-col w-64 max-h-screen pt-5 px-4 bg-white dark:bg-zinc-700 transition-all`}>
+            <div className={`fixed top-0 bottom-0 w-64 ${isToggleCartOpen ? 'left-0' : '-left-64'} min-h-screen pt-3 px-4 bg-white dark:bg-zinc-700 transition-all`}>
+            {/* <div className={`fixed top-0 bottom-0 w-64 ${isSidebarOpen ? 'right-0 ' : '-right-64'} min-h-screen pt-3 px-4 bg-white dark:bg-zinc-700 transition-all`}> */}
                 {/* Cart Header */}
                 <div className='flex items-center justify-between pb-5 mb-5 border-b border-b-gray-300 dark:border-b-white/10'>
-                    <button onClick={toggleCart} className='text-zinc-600 dark:text-white'><XMarkIcon /></button>
+                    <button onClick={toggleCart} className='text-zinc-600 dark:text-white w-6'><XMarkIcon /></button>
                     <span className='text-zinc-700 dark:text-white'>سبد خرید</span>
                 </div>
 
