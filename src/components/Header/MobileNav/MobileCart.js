@@ -20,7 +20,7 @@ export default function MobileCart() {
             <div className={`fixed top-0 bottom-0 left-0 ${isSidebarOpen ? 'left-0' : '-left-full'} flex flex-col w-64 max-h-screen pt-5 px-4 bg-white dark:bg-zinc-700 transition-all`}>
                 {/* Cart Header */}
                 <div className='flex items-center justify-between pb-5 mb-5 border-b border-b-gray-300 dark:border-b-white/10'>
-                    <button onClick={toggleSidebar} className='text-red-600 dark:text-white w-8 h-8'><XMarkIcon width={18}/></button>
+                    <button onClick={toggleSidebar} className='text-zinc-600 dark:text-white w-8'><XMarkIcon /></button>
                     <span className='text-zinc-700 dark:text-white'>سبد خرید</span>
                 </div>
 
